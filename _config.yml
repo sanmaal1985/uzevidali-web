@@ -1,0 +1,7 @@
+title: Уже видали
+description: Архив постов Telegram-канала @uzevidali — исторические и культурные параллели к современным новостям.
+theme: minima
+
+minima:
+  social_links:
+    - { platform: telegram, user_url: "https://t.me/uzevidali" }
