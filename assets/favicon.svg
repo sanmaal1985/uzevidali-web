@@ -1,0 +1,30 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="32" height="32" rx="5" fill="#12122a"/>
+  <!-- Gold accent line at bottom -->
+  <rect x="0" y="30" width="32" height="2" fill="#c9a84c"/>
+  <!-- Antenna post -->
+  <line x1="16" y1="9" x2="16" y2="6" stroke="#9ab0b0" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Antenna ball -->
+  <circle cx="16" cy="5" r="2" fill="#c9a84c"/>
+  <!-- Bender head -->
+  <rect x="7" y="9" width="18" height="18" rx="5" fill="#b2b9b9"/>
+  <!-- Lower jaw darker -->
+  <rect x="7" y="21" width="18" height="6" rx="0" fill="#929e9e" clip-path="url(#hc)"/>
+  <!-- Clip for jaw -->
+  <defs>
+    <clipPath id="hc"><rect x="7" y="9" width="18" height="18" rx="5"/></clipPath>
+  </defs>
+  <!-- Visor -->
+  <rect x="9" y="15" width="14" height="5" rx="2" fill="#060c18"/>
+  <!-- Visor glints -->
+  <ellipse cx="12.5" cy="17" rx="2" ry="1.2" fill="#0c1e32"/>
+  <ellipse cx="19.5" cy="17" rx="2" ry="1.2" fill="#0c1e32"/>
+  <ellipse cx="11.8" cy="16.2" rx="1" ry="0.6" fill="white" opacity="0.3"/>
+  <ellipse cx="18.8" cy="16.2" rx="1" ry="0.6" fill="white" opacity="0.3"/>
+  <!-- Eyebrow ridges -->
+  <rect x="9.5" y="13" width="5" height="1.2" rx="0.6" fill="#62737a"/>
+  <rect x="17.5" y="12.5" width="5" height="1.2" rx="0.6" fill="#62737a"/>
+  <!-- Smirk -->
+  <path d="M 10.5 24.5 Q 16 23.5 21.5 22.5" fill="none" stroke="#486070" stroke-width="1.2" stroke-linecap="round"/>
+</svg>
