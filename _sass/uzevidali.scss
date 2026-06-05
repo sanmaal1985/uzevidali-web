@@ -77,7 +77,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .site-tagline {
   font-family: $mono;
-  font-size: 10px;
+  font-size: 12px;
   color: #7272a8;
   margin-top: 5px;
   letter-spacing: 1px;
@@ -85,7 +85,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .site-nav a {
   font-family: $mono;
-  font-size: 10px;
+  font-size: 12px;
   color: $gold;
   border: 1px solid rgba($gold, 0.28);
   padding: 4px 10px;
@@ -128,7 +128,7 @@ main { flex: 1; }
 
 .post-item__date {
   font-family: $mono;
-  font-size: 10px;
+  font-size: 11px;
   color: $date-clr;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -196,7 +196,7 @@ main { flex: 1; }
 
 .post__back {
   font-family: $mono;
-  font-size: 10px;
+  font-size: 13px;
   color: $gold;
   display: inline-block;
   margin-bottom: 20px;
@@ -206,7 +206,7 @@ main { flex: 1; }
 
 .post__date {
   font-family: $mono;
-  font-size: 10px;
+  font-size: 12px;
   color: $date-clr;
   letter-spacing: 2px;
   text-transform: uppercase;
