@@ -9,7 +9,7 @@ $gold:     #c9a84c;
 $text:     #e4dfd6;
 $text-2:   #c8c3b4;
 $text-3:   #9090b0;
-$date-clr: #5a8a5a;
+$date-clr: #72b872;
 $max-w:    740px;
 $serif:    Georgia, 'Times New Roman', serif;
 $mono:     'Courier New', Courier, monospace;
@@ -77,8 +77,8 @@ img { max-width: 100%; height: auto; display: block; }
 
 .site-tagline {
   font-family: $mono;
-  font-size: 9px;
-  color: #3e3e58;
+  font-size: 10px;
+  color: #7272a8;
   margin-top: 5px;
   letter-spacing: 1px;
 }
@@ -128,11 +128,11 @@ main { flex: 1; }
 
 .post-item__date {
   font-family: $mono;
-  font-size: 9px;
+  font-size: 10px;
   color: $date-clr;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 
 .post-item__title {
@@ -170,12 +170,11 @@ main { flex: 1; }
 
 .pag-btn {
   font-family: $mono;
-  font-size: 11px;
+  font-size: 12px;
   color: $gold;
 
   &.disabled {
-    color: $text-3;
-    opacity: 0.3;
+    color: #484868;
     pointer-events: none;
     cursor: default;
   }
@@ -185,7 +184,7 @@ main { flex: 1; }
 
 .pag-info {
   font-family: $mono;
-  font-size: 9px;
+  font-size: 12px;
   color: $text-3;
   letter-spacing: 1px;
 }
