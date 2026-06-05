@@ -1,61 +1,42 @@
 ---
 layout: default
 ---
+{%- if paginator -%}
+  {%- assign posts_to_show = paginator.posts -%}
+{%- else -%}
+  {%- assign posts_to_show = site.posts -%}
+{%- endif -%}
 
-<div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
+<ul class="post-list">
+  {%- for post in posts_to_show -%}
+  <li class="post-item">
+    <div class="post-item__date">{{ post.date | date: "%d %b %Y" }}</div>
+    <div class="post-item__title">
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </div>
+    {%- if post.description -%}
+    <div class="post-item__excerpt">{{ post.description | truncate: 130 }}</div>
+    {%- elsif post.excerpt -%}
+    <div class="post-item__excerpt">{{ post.excerpt | strip_html | truncate: 130 }}</div>
+    {%- endif -%}
+  </li>
+  {%- endfor -%}
+</ul>
+
+{%- if paginator and paginator.total_pages > 1 -%}
+<nav class="pagination" aria-label="Навигация по страницам">
+  {%- if paginator.previous_page -%}
+  <a class="pag-btn" href="{{ paginator.previous_page_path | relative_url }}">← предыдущие</a>
+  {%- else -%}
+  <span class="pag-btn disabled">← предыдущие</span>
   {%- endif -%}
 
-  {%- if paginator.total_pages > 1 -%}
-  <nav class="pagination" style="margin-bottom: 1rem; margin-top: 0;">
-    {%- if paginator.previous_page -%}
-      <a class="pagination-item" href="{{ paginator.previous_page_path | relative_url }}">←</a>
-    {%- else -%}
-      <span class="pagination-item disabled">←</span>
-    {%- endif -%}
+  <span class="pag-info">{{ paginator.page }} / {{ paginator.total_pages }}</span>
 
-    <span class="pagination-info">{{ paginator.page }} / {{ paginator.total_pages }}</span>
-
-    {%- if paginator.next_page -%}
-      <a class="pagination-item" href="{{ paginator.next_page_path | relative_url }}">→</a>
-    {%- else -%}
-      <span class="pagination-item disabled">→</span>
-    {%- endif -%}
-  </nav>
+  {%- if paginator.next_page -%}
+  <a class="pag-btn" href="{{ paginator.next_page_path | relative_url }}">следующие →</a>
+  {%- else -%}
+  <span class="pag-btn disabled">следующие →</span>
   {%- endif -%}
-
-  {%- if paginator.posts.size > 0 -%}
-    <ul class="post-list">
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      {%- for post in paginator.posts -%}
-      <li>
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-      </li>
-      {%- endfor -%}
-    </ul>
-
-    {%- if paginator.total_pages > 1 -%}
-    <nav class="pagination">
-      {%- if paginator.previous_page -%}
-        <a class="pagination-item" href="{{ paginator.previous_page_path | relative_url }}">←</a>
-      {%- else -%}
-        <span class="pagination-item disabled">←</span>
-      {%- endif -%}
-
-      <span class="pagination-info">{{ paginator.page }} / {{ paginator.total_pages }}</span>
-
-      {%- if paginator.next_page -%}
-        <a class="pagination-item" href="{{ paginator.next_page_path | relative_url }}">→</a>
-      {%- else -%}
-        <span class="pagination-item disabled">→</span>
-      {%- endif -%}
-    </nav>
-    {%- endif -%}
-  {%- endif -%}
-</div>
+</nav>
+{%- endif -%}
