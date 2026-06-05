@@ -10,7 +10,7 @@ $gold-body:   #8a6820;   // золото на светлом (ссылки, ак
 $text:        #1c1c30;   // тёмно-синий (основной текст)
 $text-2:      #3a3a58;   // вторичный тёмный
 $text-3:      #747494;   // приглушённый (аннотации, мета)
-$date-clr:    #3a7a3a;   // зелёный на светлом фоне
+$date-clr:    #8a6820;   // тёмное золото — и на светлом, и на тёмном фоне
 $max-w:       740px;
 $serif:       Georgia, 'Times New Roman', serif;
 $mono:        'Courier New', Courier, monospace;
@@ -86,16 +86,16 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .site-nav a {
-  font-family: $mono;
-  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
   color: $gold;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   white-space: nowrap;
-  opacity: 0.85;
   transition: opacity 0.15s;
 
   &:hover {
-    opacity: 1;
+    opacity: 0.75;
     text-decoration: none;
   }
 }
