@@ -5,3 +5,11 @@
 
 .post-list h3 { font-size: 1.1rem; }
 .post-list .post-meta { font-size: 0.8rem; }
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.pagination-item.disabled { color: #ccc; }
