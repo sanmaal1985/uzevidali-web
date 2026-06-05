@@ -1,18 +1,19 @@
 // _sass/uzevidali.scss
-// Уже видали — custom Jekyll theme
+// Уже видали — custom Jekyll theme (light edition)
 
 // ── Variables ───────────────────────────────────────
-$bg:       #0f0f22;
-$surface:  #12122a;
-$border:   #1c1c34;
-$gold:     #c9a84c;
-$text:     #e4dfd6;
-$text-2:   #c8c3b4;
-$text-3:   #9090b0;
-$date-clr: #72b872;
-$max-w:    740px;
-$serif:    Georgia, 'Times New Roman', serif;
-$mono:     'Courier New', Courier, monospace;
+$bg:          #f4f0e8;   // тёплый кремовый фон
+$surface:     #12122a;   // тёмная шапка (брендовый якорь)
+$border:      #dedad0;   // светлый разделитель
+$gold:        #c9a84c;   // золото на тёмном (шапка/футер)
+$gold-body:   #8a6820;   // золото на светлом (ссылки, акценты)
+$text:        #1c1c30;   // тёмно-синий (основной текст)
+$text-2:      #3a3a58;   // вторичный тёмный
+$text-3:      #747494;   // приглушённый (аннотации, мета)
+$date-clr:    #3a7a3a;   // зелёный на светлом фоне
+$max-w:       740px;
+$serif:       Georgia, 'Times New Roman', serif;
+$mono:        'Courier New', Courier, monospace;
 
 // ── Reset ───────────────────────────────────────────
 *, *::before, *::after { box-sizing: border-box; }
@@ -36,7 +37,7 @@ body {
 }
 
 a {
-  color: $gold;
+  color: $gold-body;
   text-decoration: none;
   &:hover { text-decoration: underline; }
 }
@@ -46,7 +47,7 @@ p  { margin: 0; }
 ul, ol { margin: 0; padding: 0; list-style: none; }
 img { max-width: 100%; height: auto; display: block; }
 
-// ── Header ──────────────────────────────────────────
+// ── Header (тёмный) ──────────────────────────────────
 .site-header {
   background: $surface;
   border-bottom: 2px solid $gold;
@@ -72,7 +73,7 @@ img { max-width: 100%; height: auto; display: block; }
   line-height: 1;
   display: block;
 
-  &:hover { opacity: 0.8; text-decoration: none; }
+  &:hover { opacity: 0.85; text-decoration: none; }
 }
 
 .site-tagline {
@@ -87,14 +88,13 @@ img { max-width: 100%; height: auto; display: block; }
   font-family: $mono;
   font-size: 12px;
   color: $gold;
-  border: 1px solid rgba($gold, 0.28);
-  padding: 4px 10px;
-  border-radius: 2px;
+  letter-spacing: 0.5px;
   white-space: nowrap;
-  transition: background 0.15s;
+  opacity: 0.85;
+  transition: opacity 0.15s;
 
   &:hover {
-    background: rgba($gold, 0.1);
+    opacity: 1;
     text-decoration: none;
   }
 }
@@ -115,15 +115,12 @@ main { flex: 1; }
 }
 
 .post-item {
-  padding: 20px 0;
+  padding: 22px 0;
   border-bottom: 1px solid $border;
 
   &:last-child { border-bottom: none; }
 
-  &:hover .post-item__title {
-    color: $gold;
-    a { color: $gold; }
-  }
+  &:hover .post-item__title a { color: $gold-body; }
 }
 
 .post-item__date {
@@ -137,13 +134,11 @@ main { flex: 1; }
 
 .post-item__title {
   font-family: $serif;
-  font-size: 16px;
-  color: $text;
+  font-size: 17px;
   line-height: 1.5;
-  transition: color 0.15s ease;
 
   a {
-    color: #f0ece4;
+    color: $text;
     text-decoration: none;
     transition: color 0.15s ease;
     &:hover { text-decoration: none; }
@@ -152,9 +147,9 @@ main { flex: 1; }
 
 .post-item__excerpt {
   font-family: $serif;
-  font-size: 13px;
+  font-size: 14px;
   color: $text-3;
-  margin-top: 5px;
+  margin-top: 6px;
   font-style: italic;
   line-height: 1.6;
 }
@@ -164,17 +159,17 @@ main { flex: 1; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 0 28px;
+  padding: 18px 0 28px;
   border-top: 1px solid $border;
 }
 
 .pag-btn {
   font-family: $mono;
   font-size: 12px;
-  color: $gold;
+  color: $gold-body;
 
   &.disabled {
-    color: #484868;
+    color: #b0b0c8;
     pointer-events: none;
     cursor: default;
   }
@@ -197,7 +192,7 @@ main { flex: 1; }
 .post__back {
   font-family: $mono;
   font-size: 13px;
-  color: $gold;
+  color: $gold-body;
   display: inline-block;
   margin-bottom: 20px;
 
@@ -215,10 +210,10 @@ main { flex: 1; }
 
 .post__title {
   font-family: $serif;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: bold;
   color: $text;
-  line-height: 1.45;
+  line-height: 1.4;
   margin-bottom: 22px;
 }
 
@@ -230,12 +225,12 @@ main { flex: 1; }
 
 .post-content {
   font-family: $serif;
-  font-size: 15px;
+  font-size: 16px;
   color: $text-2;
   line-height: 1.85;
 
   p {
-    margin-bottom: 16px;
+    margin-bottom: 18px;
     &:last-child { margin-bottom: 0; }
   }
 
@@ -243,32 +238,32 @@ main { flex: 1; }
   strong { font-weight: bold;  color: $text; }
 
   a {
-    color: $gold;
+    color: $gold-body;
     &:hover { text-decoration: underline; }
   }
 
   // "Уже видали." — добавляется классом через JS
   p.pivot {
-    color: $gold;
-    font-size: 16px;
+    color: $gold-body;
+    font-size: 17px;
     font-style: italic;
-    border-left: 2px solid $gold;
+    border-left: 2px solid $gold-body;
     padding: 2px 0 2px 14px;
-    margin: 20px 0;
+    margin: 24px 0;
     line-height: 1.4;
   }
 
   // Курсивный вопрос в конце поста
   p > em:only-child {
     color: $text-3;
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 
-// ── Footer ───────────────────────────────────────────
+// ── Footer (тёмный) ──────────────────────────────────
 .site-footer {
-  background: #09091a;
-  border-top: 1px solid #141428;
+  background: $surface;
+  border-top: 2px solid $gold;
   padding: 14px 0;
   flex-shrink: 0;
 
@@ -280,13 +275,13 @@ main { flex: 1; }
 
   .footer-text {
     font-family: $mono;
-    font-size: 9px;
-    color: #2e2e48;
+    font-size: 11px;
+    color: #5a5a80;
     letter-spacing: 1px;
     margin: 0;
 
     a {
-      color: #3a3a58;
+      color: #7a7aa8;
       &:hover { color: $gold; text-decoration: none; }
     }
   }
@@ -301,15 +296,12 @@ main { flex: 1; }
     padding-bottom: 14px;
   }
 
-  .site-title { font-size: 18px; letter-spacing: 3px; }
-
-  .post__title { font-size: 18px; }
+  .site-title      { font-size: 18px; letter-spacing: 3px; }
+  .post__title     { font-size: 20px; }
+  .post-item__title { font-size: 15px; }
 
   .post-content {
-    font-size: 14px;
-
-    p.pivot { font-size: 15px; }
+    font-size: 15px;
+    p.pivot { font-size: 16px; }
   }
-
-  .post-item__title { font-size: 14px; }
 }
