@@ -6,10 +6,10 @@ $bg:       #0f0f22;
 $surface:  #12122a;
 $border:   #1c1c34;
 $gold:     #c9a84c;
-$text:     #ccc8b8;
-$text-2:   #9a9888;
-$text-3:   #505068;
-$date-clr: #4a6a4a;
+$text:     #e4dfd6;
+$text-2:   #c8c3b4;
+$text-3:   #9090b0;
+$date-clr: #5a8a5a;
 $max-w:    740px;
 $serif:    Georgia, 'Times New Roman', serif;
 $mono:     'Courier New', Courier, monospace;
@@ -115,12 +115,15 @@ main { flex: 1; }
 }
 
 .post-item {
-  padding: 18px 0;
+  padding: 20px 0;
   border-bottom: 1px solid $border;
 
   &:last-child { border-bottom: none; }
 
-  &:hover .post-item__title { color: $gold; }
+  &:hover .post-item__title {
+    color: $gold;
+    a { color: $gold; }
+  }
 }
 
 .post-item__date {
@@ -134,21 +137,22 @@ main { flex: 1; }
 
 .post-item__title {
   font-family: $serif;
-  font-size: 15px;
+  font-size: 16px;
   color: $text;
-  line-height: 1.55;
+  line-height: 1.5;
   transition: color 0.15s ease;
 
   a {
-    color: inherit;
+    color: #f0ece4;
     text-decoration: none;
+    transition: color 0.15s ease;
     &:hover { text-decoration: none; }
   }
 }
 
 .post-item__excerpt {
   font-family: $serif;
-  font-size: 12px;
+  font-size: 13px;
   color: $text-3;
   margin-top: 5px;
   font-style: italic;
